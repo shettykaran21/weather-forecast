@@ -36,7 +36,7 @@ class UI {
     )}<sup>&deg;</sup>C`;
     this.wind.innerHTML = `Wind &nbsp;<i class="fas fa-location-arrow"></i> &nbsp; ${res.wind.speed}m/s W`;
     this.windDirection.innerHTML = `Wind Direction: ${res.wind.deg}<sup>&deg;</sup>`;
-    this.pressure.innerHTML = `<i class="far fa-compass"></i>&nbsp; ${main.pressure}hPa`;
+    this.pressure.innerHTML = `<i class="far fa-compass"></i>&nbsp; ${main.pressure} hPa`;
     this.humidity.innerHTML = `Humidity: ${main.humidity}%`;
     this.visibility.innerHTML = `Visibility: ${res.visibility / 1000}km`;
   }
