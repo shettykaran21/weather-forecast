@@ -4,6 +4,7 @@ class UI {
     this.location = document.querySelector('.weather__location');
     this.icon = document.querySelector('.weather-info__icon');
     this.temperature = document.querySelector('.weather-info__temp');
+    this.description = document.querySelector('.weather-info__description');
   }
 
   paint(res) {
@@ -11,6 +12,13 @@ class UI {
     this.setTimeDate(res);
     this.setIcon(res);
     this.setTemperature(res);
+    this.setDescription(res);
+  }
+
+  setDescription(res) {
+    this.description.innerHTML = `${this.capitalize(
+      res.weather[0].description
+    )}`;
   }
 
   setTemperature(res) {
@@ -82,5 +90,13 @@ class UI {
     this.timeDate.innerHTML = `
       ${hr}:${min} ${ampm}, ${day}<br> ${date} ${month} ${year}
     `;
+  }
+
+  capitalize(str) {
+    str = str.split(' ');
+    for (var i = 0, x = str.length; i < x; i++) {
+      str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+    return str.join(' ');
   }
 }

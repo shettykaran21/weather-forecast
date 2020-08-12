@@ -25,7 +25,7 @@ body {
   padding: 0 3rem; }
 
 .u-container-s {
-  max-width: 40rem;
+  max-width: 45rem;
   margin: 0 auto;
   overflow: hidden;
   padding: 0 3rem; }
@@ -101,14 +101,20 @@ body {
 .weather__time {
   font-weight: 200; }
 
-.weather-info {
+.weather-info__main {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .weather-info__icon {
-    height: 10rem; }
-  .weather-info__temp {
-    font-size: 12rem; }
+
+.weather-info__temp {
+  font-size: 12rem;
+  font-weight: 400; }
+
+.weather-info__icon {
+  height: 10rem; }
+
+.weather-info__description {
+  font-size: 2rem; }
 
 .footer {
   height: 10rem;

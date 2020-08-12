@@ -9,16 +9,23 @@
   }
 
   &-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__temp {
+      font-size: 12rem;
+      font-weight: 400;
+    }
 
     &__icon {
       height: 10rem;
     }
 
-    &__temp {
-      font-size: 12rem;
+    &__description {
+      font-size: 2rem;
     }
   }
 }
