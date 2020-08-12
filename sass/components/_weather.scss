@@ -9,8 +9,16 @@
   }
 
   &-info {
-    &__icon img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__icon {
       height: 10rem;
+    }
+
+    &__temp {
+      font-size: 12rem;
     }
   }
 }

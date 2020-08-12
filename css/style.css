@@ -101,8 +101,14 @@ body {
 .weather__time {
   font-weight: 200; }
 
-.weather-info__icon img {
-  height: 10rem; }
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .weather-info__icon {
+    height: 10rem; }
+  .weather-info__temp {
+    font-size: 12rem; }
 
 .footer {
   height: 10rem;

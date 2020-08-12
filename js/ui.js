@@ -3,12 +3,20 @@ class UI {
     this.timeDate = document.querySelector('.weather__time');
     this.location = document.querySelector('.weather__location');
     this.icon = document.querySelector('.weather-info__icon');
+    this.temperature = document.querySelector('.weather-info__temp');
   }
 
   paint(res) {
     this.setLocation(res);
-    this.setTimeDate();
+    this.setTimeDate(res);
     this.setIcon(res);
+    this.setTemperature(res);
+  }
+
+  setTemperature(res) {
+    this.temperature.innerHTML = `${Math.round(
+      res.main.temp
+    )}<sup>&deg;</sup>C`;
   }
 
   setIcon(res) {
@@ -23,7 +31,7 @@ class UI {
     );
   }
 
-  setTimeDate() {
+  setTimeDate(res) {
     const months = [
       'Jan',
       'Feb',
@@ -47,10 +55,19 @@ class UI {
       'Friday',
       'Saturday',
     ];
+
     const d = new Date();
-    const day = days[d.getDay()];
-    let hr = d.getHours();
-    let min = d.getMinutes();
+
+    const utc = d.getTime() + d.getTimezoneOffset() * 60000;
+
+    const offset = res.timezone / 3600;
+
+    const newD = new Date(utc + 3600000 * offset);
+    // console.log(newD.toLocaleString());
+
+    const day = days[newD.getDay()];
+    let hr = newD.getHours();
+    let min = newD.getMinutes();
     if (min < 10) {
       min = '0' + min;
     }
@@ -59,11 +76,11 @@ class UI {
       hr -= 12;
       ampm = 'pm';
     }
-    const date = d.getDate();
-    const month = months[d.getMonth()];
-    const year = d.getFullYear();
+    const date = newD.getDate();
+    const month = months[newD.getMonth()];
+    const year = newD.getFullYear();
     this.timeDate.innerHTML = `
-      ${hr}:${min}${ampm}, ${day}, ${date} ${month}, ${year}
+      ${hr}:${min} ${ampm}, ${day}<br> ${date} ${month} ${year}
     `;
   }
 }
