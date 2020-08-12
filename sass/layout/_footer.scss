@@ -1,7 +1,7 @@
 .footer {
   height: 10rem;
-  color: $color-white;
-  background-color: $color-black;
+  color: $color-black;
+  background-color: $color-blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,14 +15,14 @@
   }
 
   &__link {
-    color: $color-white;
+    color: $color-black;
   }
 
   &__icon {
     cursor: pointer;
 
     &--heart {
-      color: $color-red;
+      color: $color-blue;
       margin: 0 0.5rem;
     }
   }
