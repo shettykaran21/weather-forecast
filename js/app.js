@@ -1,4 +1,4 @@
-const weather = new Weather('Pune');
+const weather = new Weather('Los Angeles');
 const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);

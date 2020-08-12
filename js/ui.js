@@ -5,6 +5,16 @@ class UI {
     this.icon = document.querySelector('.weather-info__icon');
     this.temperature = document.querySelector('.weather-info__temp');
     this.description = document.querySelector('.weather-info__description');
+    this.feels = document.querySelector('.weather-info__extras--feels');
+    this.wind = document.querySelector('.weather-info__extras--wind');
+    this.pressure = document.querySelector('.weather-info__extras--pressure');
+    this.humidity = document.querySelector('.weather-info__extras--humidity');
+    this.visibility = document.querySelector(
+      '.weather-info__extras--visibility'
+    );
+    this.windDirection = document.querySelector(
+      '.weather-info__extras--wind-direction'
+    );
   }
 
   paint(res) {
@@ -13,6 +23,19 @@ class UI {
     this.setIcon(res);
     this.setTemperature(res);
     this.setDescription(res);
+    this.setExtras(res);
+  }
+
+  setExtras(res) {
+    const main = res.main;
+    this.feels.innerHTML = `Feels like ${Math.round(
+      main.feels_like
+    )}<sup>&deg;</sup>C`;
+    this.wind.innerHTML = `Wind &nbsp;<i class="fas fa-location-arrow"></i> &nbsp; ${res.wind.speed}m/s W`;
+    this.windDirection.innerHTML = `Wind Direction: ${res.wind.deg}<sup>&deg;</sup>`;
+    this.pressure.innerHTML = `<i class="far fa-compass"></i>&nbsp; ${main.pressure}hPa`;
+    this.humidity.innerHTML = `Humidity: ${main.humidity}%`;
+    this.visibility.innerHTML = `Visibility: ${res.visibility / 1000}km`;
   }
 
   setDescription(res) {
