@@ -1,0 +1,16 @@
+.weather {
+  &__location {
+    &--icon {
+    }
+  }
+
+  &__time {
+    font-weight: 200;
+  }
+
+  &-info {
+    &__icon img {
+      height: 10rem;
+    }
+  }
+}
