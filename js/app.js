@@ -1,4 +1,8 @@
-const weather = new Weather('Pune');
+const storage = new Storage();
+const weatherLocation = storage.getLocationData();
+
+const weather = new Weather(weatherLocation);
+
 const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);
@@ -11,6 +15,8 @@ document.querySelector('.search__form').addEventListener('submit', (e) => {
 
   // Display weather again
   getWeather();
+
+  storage.setLocationData(city);
 
   e.preventDefault();
 });
