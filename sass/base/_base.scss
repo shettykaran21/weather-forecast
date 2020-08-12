@@ -29,7 +29,8 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   font-size: 1.6rem;
-  color: $color-black;
-  background-color: $color-blue;
+  color: $color-white;
+  // background-color: $color-blue;
+  background: linear-gradient(to right bottom, $color-blue, rgb(113, 113, 255));
   min-height: 100vh;
 }
