@@ -57,9 +57,8 @@ class UI {
   }
 
   setLocation(res) {
-    this.location.appendChild(
-      document.createTextNode(`${res.name}, ${res.sys.country}`)
-    );
+    // this.location.appendChild(document.createTextNode(``));
+    this.location.innerHTML = `<i class="fas fa-map-marker-alt weather__location--icon"></i>&nbsp;${res.name}, ${res.sys.country}`;
   }
 
   setTimeDate(res) {
